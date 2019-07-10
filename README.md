@@ -2,16 +2,18 @@
 Williams-Sonoma Coding Challenge
 
 # setting up
+You need node installed to run tests
+
 clone the repo down to your local machine
------------------
+
 cd into the repo
-------------------
+
 run commands
-------------------
+
 npm install
------------------
+
 npm run build
------------------
+
 
 then open the index.html file with the browser of your choice
 

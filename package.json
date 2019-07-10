@@ -4,7 +4,7 @@
   "description": "Williams-Sonoma Coding Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack -d --watch"
   },
   "repository": {
@@ -23,11 +23,33 @@
     "@babel/preset-env": "^7.5.2",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "jest-enzyme": "^7.0.2",
+    "react-addons-test-utils": "^15.6.2",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
   },
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "setupFilesAfterEnv": [
+      "./node_modules/jest-enzyme/lib/index.js"
+    ],
+    "setupFiles": [
+      "<rootDir>/enzyme.config.js"
+    ],
+    "testPathIgnorePatterns": [
+      "\\\\node_modules\\\\"
+    ]
   }
 }
