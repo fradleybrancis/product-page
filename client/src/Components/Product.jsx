@@ -22,12 +22,10 @@ class Product extends React.Component {
       return <Modal handleClick={this.handleClick} images={product.images}/>
     }
     return (
-      <div className="product">
-        <div className="productName">{ product.name }</div>
-        <div className="productImage" onClick={this.handleClick}>
-          <img src={product.hero.href} alt={product.hero.alt} />
-          <div className="price">${product.priceRange.selling.high}</div>
-        </div>
+      <div className="product" onClick={this.handleClick}>   
+        <img src={product.hero.href} alt={product.hero.alt} />
+        <div className="name">{ product.name }</div>
+        <div className="price">${product.priceRange.selling.high}</div>
       </div>
     );
   }
