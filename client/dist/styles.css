@@ -2,6 +2,10 @@ img {
   width: 100%;
 }
 
+h1 {
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
 .allProducts {
   display: flex;
   flex-wrap: wrap;
