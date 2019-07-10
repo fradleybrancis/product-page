@@ -3,22 +3,54 @@ import React from 'react';
 class Modal extends React.Component {
   constructor(props) {
     super(props);
-    const { images } = this.props;
     this.state = {
-      displayedImage: images[0],
+      currentImage: 0,
     };
+    this.scrollRight = this.scrollRight.bind(this);
+    this.scrollLeft = this.scrollLeft.bind(this);
+  }
+
+  componentDidMount() {
+    // creates function to exit modal on any key press
+    const { handleClick } = this.props;
+    window.addEventListener('keyup', handleClick, false);
+  }
+
+  componentWillUnmount() {
+    // removes function when modal is closed to prevent duplication of the same function
+    const { handleClick } = this.props;
+    window.removeEventListener('keyup', handleClick, false);
+  }
+
+  scrollRight() {
+    // checks if there is any more images the modal can pull up for this selected product
+    const { images } = this.props;
+    const { currentImage } = this.state;
+    if (images[currentImage + 1]) {
+      this.setState({ currentImage: currentImage + 1 });
+    }
+  }
+
+  scrollLeft() {
+    const { images } = this.props;
+    const { currentImage } = this.state;
+    if (images[currentImage - 1]) {
+      this.setState({ currentImage: currentImage - 1 });
+    }
   }
 
   render() {
-    const { handleClick } = this.props;
-    const { displayedImage } = this.state;
+    const { handleClick, images } = this.props;
+    const { currentImage } = this.state;
     return (
       <div className="modal">
-        <section className="modal-main">
-          <img src={displayedImage.href} alt={displayedImage.alt} onClick={handleClick}/>
-        </section>
+        <button id="scrollLeft" type="button" onClick={this.scrollLeft}>{'<'}</button>
+        <div className="modal-main">
+          <img src={images[currentImage].href} alt={images[currentImage].alt} onClick={handleClick} />
+        </div>
+        <button id="scrollRight" type="button" onClick={this.scrollRight}>{'>'}</button>
       </div>
-    )
+    );
   }
 }
 
