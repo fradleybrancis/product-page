@@ -3,13 +3,15 @@ Williams-Sonoma Coding Challenge
 
 # setting up
 clone the repo down to your local machine
+-----------------
 cd into the repo
+------------------
 run commands
-|-------------|
-|npm install  |
-|-------------|
-|npm run build|
-|-------------|
+------------------
+npm install
+-----------------
+npm run build
+-----------------
 
 then open the index.html file with the browser of your choice
 
