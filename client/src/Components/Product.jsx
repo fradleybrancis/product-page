@@ -1,29 +1,36 @@
 import React from 'react';
+import Modal from './Modal.jsx';
 
-export default class Product extends React.Component {
+class Product extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       clicked: false,
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const { clicked } = this.state;
+    this.setState({ clicked: !clicked });
   }
 
   render() {
-    console.log(this.props.product)
     const { product } = this.props;
+    const { clicked } = this.state;
+    if (clicked) {
+      return <Modal handleClick={this.handleClick} images={product.images}/>
+    }
     return (
       <div className="product">
-        <div>{ product.name }</div>
-        <div className="productImage">
+        <div className="productName">{ product.name }</div>
+        <div className="productImage" onClick={this.handleClick}>
           <img src={product.hero.href} alt={product.hero.alt} />
           <div className="price">${product.priceRange.selling.high}</div>
         </div>
       </div>
     );
-    
   }
 }
 
-Product.propTypes = {
-  product: PropTypes
-}
+export default Product;
