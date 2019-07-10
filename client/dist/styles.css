@@ -1,3 +1,6 @@
+img {
+  width: 100%;
+}
 
 .allProducts {
   display: flex;
@@ -7,18 +10,24 @@
 
 .product {
   width: 32%;
-}
-
-.productImage {
   position: relative;
   justify-content: center;
+  text-align: center;
+}
+
+.name {
+  position: absolute;
+  top: 0%;
+  background: rgb(115, 116, 117);
+  color: white;
 }
 
 .price {
   position: absolute;
-  left: 10px;
-  top: 10px;
-  background: rgb(201, 209, 216);
+  right: 5%;
+  bottom: 5%;
+  background: rgb(253, 135, 0);
+  color: white;
 }
 
 .modal {
