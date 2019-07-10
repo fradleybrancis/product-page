@@ -39,3 +39,21 @@
   left:50%;
   transform: translate(-50%,-50%);
 }
+
+#scrollRight {
+  position: fixed;
+  right: 0%;
+  top: 50%;
+  width: 5%;
+  height: 10%;
+  border-radius: 25px;
+}
+
+#scrollLeft {
+  position: fixed;
+  left: 0%;
+  top: 50%;
+  width: 5%;
+  height: 10%;
+  border-radius: 25px;
+}
