@@ -60,11 +60,18 @@ describe('Check if all components exist when given appropriate props', () => {
 
 // Tests if Modal displays correct image given appropriate props
 
-describe('Checks if modal has correct element', () => {
+describe('Checks if components have correct elements', () => {
   it('expects Modal to have certain image', () => {
     const wrapper = Enzyme.shallow(<Modal images={dummyProduct.images} />);
     expect(wrapper.containsMatchingElement(
       <img src='https://www.westelm.com/weimgs/ab/images/wcm/products/201924/0021/cotton-cloud-jersey-duvet-cover-shams-m.jpg' alt="" />
+      )
+    ).toBeTruthy()
+  });
+  it('expects Product to have certain hero', () => {
+    const wrapper = Enzyme.shallow(<Product product={dummyProduct} />);
+    expect(wrapper.containsMatchingElement(
+      <img src='https://www.westelm.com/weimgs/ab/images/wcm/products/201924/0026/cotton-cloud-jersey-duvet-cover-shams-m.jpg' alt="" />
       )
     ).toBeTruthy()
   });
