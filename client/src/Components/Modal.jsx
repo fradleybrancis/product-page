@@ -17,13 +17,13 @@ class Modal extends React.Component {
   }
 
   componentWillUnmount() {
-    // removes function when modal is closed to prevent duplication of the same function
+    // removes function when modal is closed to prevent duplication
     const { handleClick } = this.props;
     window.removeEventListener('keyup', handleClick, false);
   }
 
   scrollRight() {
-    // checks if there is any more images the modal can pull up for this selected product
+    // checks if there is any more images the modal can pull up for current selected product
     const { images } = this.props;
     const { currentImage } = this.state;
     if (images[currentImage + 1]) {
@@ -32,6 +32,7 @@ class Modal extends React.Component {
   }
 
   scrollLeft() {
+    // checks if there is any previous images
     const { images } = this.props;
     const { currentImage } = this.state;
     if (images[currentImage - 1]) {
