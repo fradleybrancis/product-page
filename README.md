@@ -8,19 +8,22 @@ clone the repo down to your local machine
 
 cd into the repo
 
-run commands
+Run the following commands
 
 -npm install
 
 -npm run build
 
+Then open the index.html file in the browser of your choice
+
+To test the page run command
+
 -npm test
 
-
-then open the index.html file with the browser of your choice
-
 # how it works
-Everything here is done from completely from scratch
+Everything here is done completely from scratch.
+
+I used React to build the page and tested the codes functionality with Jest & Enzyme.
 
 The product page is made up of 10 different stateful components for each product.
 
