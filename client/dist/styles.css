@@ -3,7 +3,10 @@ img {
 }
 
 h1 {
-  font-family: Verdana, Tahoma, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
+  width: 100%;
+  background: rgb(184, 204, 211);
+  text-align: center;
 }
 
 .allProducts {
@@ -17,10 +20,12 @@ h1 {
   position: relative;
   justify-content: center;
   text-align: center;
+  padding: 10px 0px 10px 0px;
 }
 
 .name {
   position: absolute;
+  width: 100%;
   top: 0%;
   background: rgb(115, 116, 117);
   color: white;
