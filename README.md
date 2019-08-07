@@ -1,5 +1,5 @@
 # product-page
-Williams-Sonoma Coding Challenge
+Front End for Williams-Sonoma Product Page
 
 # setting up
 You will need node installed
